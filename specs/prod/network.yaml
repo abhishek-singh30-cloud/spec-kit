@@ -1,5 +1,5 @@
 resourceGroup:
-  name: rg-speckit-demo
+  name: rg-demo-prod
   location: eastus
 
 vnet:
@@ -7,9 +7,3 @@ vnet:
 
   address_space:
     - 10.0.0.0/16
-
-  subnet:
-    name: app-subnet
-
-    prefix:
-      - 10.0.1.0/24
