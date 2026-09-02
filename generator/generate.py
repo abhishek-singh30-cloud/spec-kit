@@ -30,9 +30,14 @@ resource "azurerm_resource_group" "rg" {{
 }}
 
 module "vnet" {{
+
   source = "Azure/avm-res-network-virtualnetwork/azurerm"
 
   name = "{vnet}"
+
+  location = "{location}"
+
+  parent_id = azurerm_resource_group.rg.id
 
   address_space = [
     "{address_space}"
