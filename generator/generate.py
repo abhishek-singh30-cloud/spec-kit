@@ -8,7 +8,7 @@ rg = spec["resourceGroup"]["name"]
 location = spec["resourceGroup"]["location"]
 
 vnet = spec["vnet"]["name"]
-address_space["name" = spec["vnet"]["address][0]
+address_space = spec["vnet"]["address_space"][0]
 
 terraform = f'''
 terraform {{
