@@ -15,7 +15,7 @@ terraform {{
   required_providers {{
     azurerm = {{
       source  = "hashicorp/azurerm"
-      version = "~>4.0"
+      version = "~> 4.0"
     }}
   }}
 }}
@@ -30,7 +30,6 @@ resource "azurerm_resource_group" "rg" {{
 }}
 
 module "vnet" {{
-
   source = "Azure/avm-res-network-virtualnetwork/azurerm"
 
   name = "{vnet}"
@@ -47,4 +46,3 @@ with open("generated/main.tf", "w") as f:
     f.write(terraform)
 
 print("Terraform generated using AVM")
-``
