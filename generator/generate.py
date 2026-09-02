@@ -29,7 +29,7 @@ resource "azurerm_resource_group" "rg" {{
   location = "{location}"
 }}
 
-module "vnet" {
+module "vnet" {{
 
   source = "Azure/avm-res-network-virtualnetwork/azurerm"
 
@@ -38,7 +38,8 @@ module "vnet" {
   address_space = [
     "{address_space}"
   ]
-}
+}}
+'''
 
 os.makedirs("generated", exist_ok=True)
 
@@ -46,3 +47,4 @@ with open("generated/main.tf", "w") as f:
     f.write(terraform)
 
 print("Terraform generated using AVM")
+``
