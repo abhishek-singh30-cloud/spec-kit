@@ -8,23 +8,7 @@ rg = spec["resourceGroup"]["name"]
 location = spec["resourceGroup"]["location"]
 
 vnet = spec["vnet"]["name"]
-address_space = spec["vnet"]["address_space"][0]
-
-# NEW: Read subnet definitions
-subnets_block = ""
-
-# NEW: Loop through all subnets
-if "subnets" in spec["vnet"]:
-    for subnet in spec["vnet"]["subnets"]:
-
-        subnet_name = subnet["name"]
-
-        subnets_block += f'''
-    "{subnet_name}" = {{
-      name             = "{subnet_name}"
-      address["name"_block += f'''
-subnet_name}"    }}
-'''
+address_space["name" = spec["vnet"]["address][0]
 
 terraform = f'''
 terraform {{
@@ -59,9 +43,16 @@ module "vnet" {{
     "{address_space}"
   ]
 
-  # NEW: Pass subnets to AVM
   subnets = {{
-{subnets_block}
+
+    app = {{
+      name = "app-subnet"
+
+      address_prefixes = [
+        "10.0.1.0/24"
+      ]
+    }}
+
   }}
 }}
 '''
